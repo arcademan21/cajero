@@ -1,0 +1,12 @@
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+	
+	RewriteEngine On
+	RewriteBase /COSAS_CON_FRANCIS/cajero/api/
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.+)$ index.php?request=$1 [QSA,L]
+	RewriteRule ^((?!index\.php).+)$ /index.php [L]
+
+</IfModule>
